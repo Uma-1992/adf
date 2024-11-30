@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="regionParam"
+    Kind="viewcriteria"
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="Countries"
     Entity="model.eo.Countries"/>
@@ -35,9 +39,45 @@
     EntityAttrName="RegionId"
     EntityUsage="Countries"
     AliasName="REGION_ID"/>
+  <ViewCriteria
+    Name="CountriesViewCriteria"
+    ViewObjectName="model.vo.CountriesView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="CountriesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="RegionId"
+        ViewAttribute="RegionId"
+        Operator="="
+        Conjunction="AND"
+        Value=":regionParam"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="LocationsView"
-    ViewLink="model.vo.LocCIdFkLink"
+    ViewLink="model.link.LocCIdFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

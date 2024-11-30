@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="countryParam"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Locations"
     Entity="model.eo.Locations"/>
@@ -54,9 +58,45 @@
     EntityAttrName="CountryId"
     EntityUsage="Locations"
     AliasName="COUNTRY_ID"/>
+  <ViewCriteria
+    Name="LocationsViewCriteria"
+    ViewObjectName="model.vo.LocationsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="LocationsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CountryId"
+        ViewAttribute="CountryId"
+        Operator="="
+        Conjunction="AND"
+        Value=":countryParam"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="DepartmentsView"
-    ViewLink="model.vo.DeptLocFkLink"
+    ViewLink="model.link.DeptLocFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
