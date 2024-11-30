@@ -15,12 +15,27 @@
     <Attr Name="_appModuleNames0" Value="model.service.AppModule"/>
   </DesignTime>
   <Containee
+    Name="associations"
+    PackageName="model.associations"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="eo"
     PackageName="model.eo"
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_EO" Value="true"/>
-      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="link"
+    PackageName="model.link"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee
@@ -37,7 +52,6 @@
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_VO" Value="true"/>
-      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
 </JboProject>
