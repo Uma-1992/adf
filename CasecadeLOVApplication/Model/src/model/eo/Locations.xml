@@ -86,16 +86,16 @@
   </Attribute>
   <AccessorAttribute
     Name="Countries"
-    Association="model.eo.LocCIdFkAssoc"
-    AssociationEnd="model.eo.LocCIdFkAssoc.Countries"
-    AssociationOtherEnd="model.eo.LocCIdFkAssoc.Locations"
+    Association="model.associations.LocCIdFkAssoc"
+    AssociationEnd="model.associations.LocCIdFkAssoc.Countries"
+    AssociationOtherEnd="model.associations.LocCIdFkAssoc.Locations"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <AccessorAttribute
     Name="Departments"
-    Association="model.eo.DeptLocFkAssoc"
-    AssociationEnd="model.eo.DeptLocFkAssoc.Departments"
-    AssociationOtherEnd="model.eo.DeptLocFkAssoc.Locations"
+    Association="model.associations.DeptLocFkAssoc"
+    AssociationEnd="model.associations.DeptLocFkAssoc.Departments"
+    AssociationOtherEnd="model.associations.DeptLocFkAssoc.Locations"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key
