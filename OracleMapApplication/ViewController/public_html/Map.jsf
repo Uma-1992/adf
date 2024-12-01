@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="Map.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelSplitter id="ps1" splitterPosition="600">
+                <f:facet name="first">
+                    <af:table value="#{bindings.DepartmetnsAndLocationsView1.collectionModel}" var="row"
+                              rows="#{bindings.DepartmetnsAndLocationsView1.rangeSize}"
+                              emptyText="#{bindings.DepartmetnsAndLocationsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.DepartmetnsAndLocationsView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.DepartmetnsAndLocationsView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.DepartmetnsAndLocationsView1.rangeSize}"
+                              filterModel="#{bindings.DepartmetnsAndLocationsView1Query.queryDescriptor}"
+                              filterVisible="true"
+                              queryListener="#{bindings.DepartmetnsAndLocationsView1Query.processQuery}" varStatus="vs"
+                              id="t1">
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentId.label}"
+                                   id="c1">
+                            <af:outputText value="#{row.DepartmentId}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentId.tooltip}"
+                                           id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentName.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentName.label}"
+                                   id="c2">
+                            <af:outputText value="#{row.DepartmentName}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.DepartmentName.tooltip}"
+                                           id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId.label}" id="c3">
+                            <af:outputText value="#{row.LocationId}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId.tooltip}"
+                                           id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId1.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId1.label}"
+                                   id="c4">
+                            <af:outputText value="#{row.LocationId1}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId1.tooltip}"
+                                           id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmetnsAndLocationsView1.hints.LocationId1.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.City.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.City.label}" id="c5">
+                            <af:outputText value="#{row.City}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.City.tooltip}"
+                                           id="ot5"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.CountryId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.CountryId.label}" id="c6">
+                            <af:outputText value="#{row.CountryId}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.CountryId.tooltip}"
+                                           id="ot6"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.PostalCode.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.PostalCode.label}" id="c7">
+                            <af:outputText value="#{row.PostalCode}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.PostalCode.tooltip}"
+                                           id="ot7"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.StateProvince.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.StateProvince.label}"
+                                   id="c8">
+                            <af:outputText value="#{row.StateProvince}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.StateProvince.tooltip}"
+                                           id="ot8"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.StreetAddress.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.StreetAddress.label}"
+                                   id="c9">
+                            <af:outputText value="#{row.StreetAddress}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.StreetAddress.tooltip}"
+                                           id="ot9"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.LocationX.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.LocationX.label}" id="c10">
+                            <af:outputText value="#{row.LocationX}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.LocationX.tooltip}"
+                                           id="ot10">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmetnsAndLocationsView1.hints.LocationX.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.DepartmetnsAndLocationsView1.hints.LocationY.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.DepartmetnsAndLocationsView1.hints.LocationY.label}" id="c11">
+                            <af:outputText value="#{row.LocationY}"
+                                           shortDesc="#{bindings.DepartmetnsAndLocationsView1.hints.LocationY.tooltip}"
+                                           id="ot11">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.DepartmetnsAndLocationsView1.hints.LocationY.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                </f:facet>
+                <f:facet name="second">
+                    <af:panelGroupLayout id="pgl1">
+                        <dvt:map id="map" startingX="-1.324839" mapServerConfigId="mapConfig1" copyrightText="You are copy right"
+                                 baseMapName="ELOCATION_MERCATOR.WORLD_MAP" mapZoom="4"
+                                 inlineStyle="width:800px; height:675px;" startingY="51.778435">
+                            <dvt:mapPointTheme id="mt1" value="#{bindings.DepartmetnsAndLocationsView11.geoMapModel}" builtInImage="Flag_Green"/>
+                            <dvt:mapOverview initialShown="false"/>
+                        </dvt:map>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>
