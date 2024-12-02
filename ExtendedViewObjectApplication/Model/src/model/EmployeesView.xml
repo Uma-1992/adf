@@ -25,9 +25,11 @@
        Employees.VERSIONNO, 
        Employees.AGE, 
        Employees.NEW_EMAIL"
-  FromList="EMPLOYEES Employees">
+  FromList="EMPLOYEES Employees"
+  ComponentClass="model.EmployeesViewImpl"
+  ComponentInterface="model.common.EmployeesView">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewAccessor
@@ -231,4 +233,17 @@
     ViewLink="model.DeptMgrFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="getEmployeeFullName"
+      MethodName="getEmployeeFullName">
+      <Return
+        Name="_return_type_"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="employeeId"
+        Type="int"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>

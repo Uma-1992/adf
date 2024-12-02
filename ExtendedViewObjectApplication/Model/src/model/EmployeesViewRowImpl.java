@@ -15,6 +15,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class EmployeesViewRowImpl extends ViewRowImpl {
+
     public static final int ENTITY_EMPLOYEES = 0;
 
     /**
@@ -41,6 +42,7 @@ public class EmployeesViewRowImpl extends ViewRowImpl {
         EmployeesView1,
         DepartmentsView1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -62,6 +64,7 @@ public class EmployeesViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int EMPLOYEEID = AttributesEnum.EmployeeId.index();
     public static final int FIRSTNAME = AttributesEnum.FirstName.index();
     public static final int LASTNAME = AttributesEnum.LastName.index();
