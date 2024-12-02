@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="dept.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelFormLayout id="pfl1">
+                <f:facet name="footer">
+                    <af:button text="Insert" id="b1"/>
+                </f:facet>
+                <af:inputText label="Dept Id" id="it1" binding="#{depts.deptIdComponent}"/>
+                <af:inputText label="Dept Name" id="it2" binding="#{depts.deptNameComponent}"/>
+            </af:panelFormLayout>
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:panelBox text="PanelBox1" id="pb1">
+                <f:facet name="toolbar">
+                    <af:toolbar id="t2">
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                id="b3"/>
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                    immediate="true" id="b4">
+                            <af:resetActionListener/>
+                        </af:button>
+                    </af:toolbar>
+                </f:facet>
+                <af:table value="#{bindings.ProggrammaticDepartmentsView1.collectionModel}" var="row"
+                          rows="#{bindings.ProggrammaticDepartmentsView1.rangeSize}"
+                          emptyText="#{bindings.ProggrammaticDepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.ProggrammaticDepartmentsView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.ProggrammaticDepartmentsView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.ProggrammaticDepartmentsView1.rangeSize}"
+                          filterModel="#{bindings.ProggrammaticDepartmentsView1Query.queryDescriptor}"
+                          filterVisible="true"
+                          queryListener="#{bindings.ProggrammaticDepartmentsView1Query.processQuery}" varStatus="vs"
+                          id="t1" partialTriggers="b2">
+                    <af:column id="c3">
+                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                   disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ProggrammaticDepartmentsView1.hints.DeptId.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.ProggrammaticDepartmentsView1.hints.DeptId.label}" id="c1">
+                        <af:outputText value="#{row.DeptId}"
+                                       shortDesc="#{bindings.ProggrammaticDepartmentsView1.hints.DeptId.tooltip}"
+                                       id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ProggrammaticDepartmentsView1.hints.DeptId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ProggrammaticDepartmentsView1.hints.DepartmentName.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.ProggrammaticDepartmentsView1.hints.DepartmentName.label}"
+                               id="c2">
+                        <af:outputText value="#{row.DepartmentName}"
+                                       shortDesc="#{bindings.ProggrammaticDepartmentsView1.hints.DepartmentName.tooltip}"
+                                       id="ot2"/>
+                    </af:column>
+                </af:table>
+            </af:panelBox>
+        </af:form>
+    </af:document>
+</f:view>
