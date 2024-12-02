@@ -401,7 +401,8 @@ public class EmployeesImpl extends EntityImpl {
      * Validation method for Employees.
      */
     public boolean validateEmployeesSalary() {
-        if(getSalary() != null && getSalary().doubleValue() > 50000 && getDepartmentId() <= 50){
+        BigDecimal salary = getSalary();
+        if(salary != null && getDepartmentId() != null && salary.doubleValue() > 50000 && getDepartmentId() <= 50){
             return false;
         }
         return true;
