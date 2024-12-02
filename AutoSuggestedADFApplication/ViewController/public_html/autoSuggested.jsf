@@ -19,6 +19,7 @@
                               maximumLength="#{bindings.FirstName.hints.precision}"
                               shortDesc="#{bindings.FirstName.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.FirstName.validator}"/>
+                    <af:autoSuggestBehavior suggestItems="#{MyBean.firstNameItems}"/>
                 </af:inputText>
                 <af:inputText value="#{bindings.LastName.inputValue}" label="#{bindings.LastName.hints.label}"
                               required="#{bindings.LastName.hints.mandatory}"
