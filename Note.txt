@@ -3,7 +3,7 @@ Transient attributeName
 
 * TotalNumberOfEmployees	-->	EmployeesView.count("EmployeeId")
 * TotalEmployeeSalary	-->	EmployeesView.sum("Salary")
-
+...........
 Groovy Expression in EmployeesView
 Transient attributeName
 * FullName	-->	FirstName+' '+LastName
@@ -15,3 +15,11 @@ Transient attributeName
   }
 attributeName=
 * HireDate	-->	return adf.currentDate
+......
+bindvariable Groovy Expression for deptId:
+return model.common.ModelUtil.getUserDeptId();
+..........
+ <TransientExpression
+      Name="VariableScript" trustMode="trusted"
+      CodeSourceName="EmployeesView"/>
+
