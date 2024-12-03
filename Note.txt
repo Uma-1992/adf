@@ -1,0 +1,17 @@
+Groovy Expression in DepartmentsView
+Transient attributeName
+
+TotalNumberOfEmployees	-->	EmployeesView.count("EmployeeId")
+TotalEmployeeSalary	-->	EmployeesView.sum("Salary")
+
+Groovy Expression in EmployeesView
+Transient attributeName
+FullName	-->	FirstName+' '+LastName
+MyDepartmentName	-->	DepartmentsView1.("DepartmentName")
+CountEmpSalary	-->	if(Salary != null && CommissionPct != null){
+return (Salary * CommissionPct) + Salary
+}else{
+return Salary
+}
+attributeName=
+HireDate	-->	return adf.currentDate
