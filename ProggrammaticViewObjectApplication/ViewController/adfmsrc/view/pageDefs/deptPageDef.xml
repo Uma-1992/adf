@@ -23,5 +23,11 @@
             Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <methodAction id="insertDeptToDatabase" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="insertDeptToDatabase" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.insertDeptToDatabase.dataControl.dataProvider">
+      <NamedData NDName="deptId" NDType="int"/>
+      <NamedData NDName="deptName" NDType="java.lang.String"/>
+    </methodAction>
   </bindings>
 </pageDefinition>
